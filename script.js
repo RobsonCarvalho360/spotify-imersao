@@ -10,6 +10,18 @@ function requestApi(searchTerm) {
 }
 
 
+function displayResults(result) {
+    resultPlaylist.classList.add("hidden")
+    const artistName = document.getElementById('artist-name');
+    const artistImage = document.getElementById('artist-img');
+
+result.forEach(element => {
+    artistName.innerText = element.name;
+    artistImage.src = element.urlImg;
+});
+
+resultArtist.classList.remove('hidden');
+}
 
 document.addEventListener('input', function () {
     const searchTerm = searchInput.value.toLowerCase();
